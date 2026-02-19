@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="">
         <motion.h1 
         
-        className="text-lg font-semibold md:text-xl
+        className="text-sm sm:text-lg font-semibold md:text-xl
          cursor-pointer">
           Izzatbek <span className="text-pink-600">Abdusharipov</span>
         </motion.h1>
