@@ -1,10 +1,15 @@
 import { Info, X } from 'lucide-react'
-import React from 'react'
+import { motion } from 'framer-motion';
 
 const Modal = ({setOpen}) => {
   return (
-    <div onClick={()=>setOpen(false)} className='relative flex flex-col items-center justify-center w-full h-screen bg-black/80 z-40'>
-      <div className="absolute  w-full max-w-lg bg-white text-black p-6 rounded-md shadow-md z-50">
+    <div onClick={()=>setOpen(false)} className='fixed inset-0 flex flex-col items-center justify-center w-full h-screen bg-black/80 z-40'>
+      <motion.div
+      initial={{ opacity: 0.4 }}
+      animate={{ opacity: 0.8 }}
+      exit={{ opacity: 0.4 }} 
+      onClick={e=>e.stopPropagation()}
+      className="absolute  w-full max-w-lg bg-white text-black p-6 rounded-md shadow-md z-50">
         <button onClick={()=>setOpen(false)} className='cursor-pointer text-gray-500 hover:text-gray-300 transition-all duration-300
          hover:rotate-90 hover:scale-110'>
           <X/>
@@ -22,7 +27,7 @@ const Modal = ({setOpen}) => {
           <button className='bg-gray-300 px-5 py-2.5 shadow-md rounded-md w-full
            cursor-pointer hover:bg-gray-200 transition duration-300'>Next</button>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

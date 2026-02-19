@@ -15,7 +15,6 @@ const App = () => {
         >
           Click here
         </button>
-        <div className=""></div>
         {open && <Modal setOpen={setOpen} />}
       </div>
     </div>
